@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.harsha.callrecorder.activity.CallActivity">
+
+    <item
+        android:id="@+id/action_make_phone_call"
+        android:orderInCategory="0"
+        android:title="@string/action_make_phone_call"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_delete"
+        android:orderInCategory="1"
+        android:title="@string/action_delete"
+        app:showAsAction="never" />
+
+</menu>

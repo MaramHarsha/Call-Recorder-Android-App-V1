@@ -1,0 +1,538 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.CallActivity"
+    tools:showIn="@layout/activity_call">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/activity_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/content_call_type_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/call"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/content_call_type_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:contentDescription="@string/date_time" />
+
+        <TextView
+            android:id="@+id/content_call_number_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_outline_contact_phone_24px"
+            android:drawableStart="@drawable/ic_outline_contact_phone_24px"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="@dimen/activity_margin_halve"
+            android:text="@string/number"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/content_call_begin_time_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_baseline_access_time_24px"
+            android:drawableStart="@drawable/ic_baseline_access_time_24px"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="@dimen/activity_margin_halve"
+            android:text="@string/time_date"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/content_call_end_time_date_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_baseline_access_time_24px"
+            android:drawableStart="@drawable/ic_baseline_access_time_24px"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="@dimen/activity_margin_halve"
+            android:text="@string/time_date"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/content_call_duration_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_hourglass_empty_24px"
+            android:drawableStart="@drawable/ic_hourglass_empty_24px"
+            android:drawableTint="@color/colorAccent"
+            android:drawablePadding="@dimen/activity_margin_halve"
+            android:text="@string/duration"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/colorAccent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/call_player"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <View
+                android:background="@drawable/shape_dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layerType="software" />
+
+            <SeekBar
+                android:id="@+id/content_call_play_seek_bar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/content_call_play_time_elapsed"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:gravity="start"
+                    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                    android:layout_marginStart="@dimen/activity_horizontal_margin"
+                    android:text="0:00" />
+
+                <TextView
+                    android:id="@+id/content_call_play_time_remaining"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="end"
+                    android:gravity="end"
+                    android:layout_marginRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                    android:text="0:00" />
+
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/content_call_play_image_button"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/ic_outline_play_circle_outline_24px"
+                android:tint="@color/colorAccent"
+                android:contentDescription="@string/play" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_outline_volume_down_24px"
+                    android:tint="@color/colorAccent"
+                    android:contentDescription="@string/volume_down" />
+
+                <SeekBar
+                    android:id="@+id/content_call_play_volume_seek_bar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="8"
+                    android:layout_gravity="center"
+                    android:progress="50"
+                    android:max="100" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_outline_volume_up_24px"
+                    android:tint="@color/colorAccent"
+                    android:contentDescription="@string/volume_up" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Advertisement box -->
+        <LinearLayout
+            android:id="@+id/content_call_advertisement_box_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/advertisement_box_content_height">
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:id="@+id/content_call_advertisement_box_1_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_margin" />
+
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/content_call_advertisement_box_1_ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@id/content_call_advertisement_1_box_not_available_text_view"
+                    android:layout_alignRight="@id/content_call_advertisement_1_box_not_available_text_view"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:visibility="gone"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/google_admob_text_typing_fragment_banner_ad" />
+
+                <!-- Unit ID for testing: ca-app-pub-3940256099942544/6300978111 -->
+
+                <TextView
+                    android:id="@+id/content_call_advertisement_1_box_not_available_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="start|center_vertical"
+                    android:drawableLeft="@drawable/ic_baseline_block_24px"
+                    android:drawableStart="@drawable/ic_baseline_block_24px"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="@dimen/activity_margin_halve"
+                    android:text="@string/not_available_at_the_moment"
+                    android:textStyle="bold"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!-- - Advertisement box -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/file_info"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <View
+                android:background="@drawable/shape_dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layerType="software" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_halve_halve"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_outline_description_24px"
+                android:tint="@color/colorAccent"
+                android:contentDescription="@string/file_info" />
+
+            <TextView
+                android:id="@+id/content_call_path"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve_halve"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/path"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal|vertical">
+
+                <HorizontalScrollView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/content_call_file_info_table_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:stretchColumns="*" />
+
+                </HorizontalScrollView>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <!-- Advertisement box -->
+        <LinearLayout
+            android:id="@+id/content_call_advertisement_box_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/advertisement_box_content_height">
+
+                <ProgressBar
+                    style="@style/Widget.AppCompat.ProgressBar"
+                    android:id="@+id/content_call_advertisement_box_2_progress_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/activity_margin" />
+
+                <com.google.android.gms.ads.AdView
+                    xmlns:ads="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/content_call_advertisement_box_2_ad_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@id/content_call_advertisement_2_box_not_available_text_view"
+                    android:layout_alignRight="@id/content_call_advertisement_2_box_not_available_text_view"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="0dp"
+                    android:layout_marginRight="0dp"
+                    android:visibility="gone"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/google_admob_text_typing_fragment_banner_ad" />
+
+                <!-- Unit ID for testing: ca-app-pub-3940256099942544/6300978111 -->
+
+                <TextView
+                    android:id="@+id/content_call_advertisement_2_box_not_available_text_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="start|center_vertical"
+                    android:drawableLeft="@drawable/ic_baseline_block_24px"
+                    android:drawableStart="@drawable/ic_baseline_block_24px"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawablePadding="@dimen/activity_margin_halve"
+                    android:text="@string/not_available_at_the_moment"
+                    android:textStyle="bold"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!-- - Advertisement box -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve_halve"
+            android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/sim_card_info"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <View
+                android:background="@drawable/shape_dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layerType="software" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_halve_halve"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_outline_sim_card_24px"
+                android:tint="@color/colorAccent"
+                android:contentDescription="@string/sim_card_info" />
+
+            <TextView
+                android:id="@+id/content_call_serial_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve_halve"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/serial_number"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal|vertical">
+
+                <HorizontalScrollView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/content_call_sim_card_info_table_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:stretchColumns="*" />
+
+                </HorizontalScrollView>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin_halve_halve"
+            android:background="@drawable/box_background"
+            android:padding="@dimen/activity_margin"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="start"
+                android:text="@string/network_info"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+            <View
+                android:background="@drawable/shape_dash_line"
+                android:layout_width="match_parent"
+                android:layout_height="2dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:layerType="software" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal|vertical">
+
+                <HorizontalScrollView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content">
+
+                    <TableLayout
+                        android:id="@+id/content_call_network_info_table_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:stretchColumns="*" />
+
+                </HorizontalScrollView>
+
+            </ScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

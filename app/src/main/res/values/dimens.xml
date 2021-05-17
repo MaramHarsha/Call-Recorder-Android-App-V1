@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin">@dimen/activity_margin</dimen>
+    <dimen name="activity_vertical_margin">@dimen/activity_margin</dimen>
+    <!-- - Default screen margins, per the Android Design guidelines. -->
+
+    <!-- Additional screen margins. -->
+    <dimen name="activity_margin_double">32dp</dimen>
+    <dimen name="activity_horizontal_margin_double">@dimen/activity_margin_double</dimen>
+    <dimen name="activity_vertical_margin_double">@dimen/activity_margin_double</dimen>
+
+    <dimen name="activity_margin_double_double">64dp</dimen>
+    <dimen name="activity_horizontal_margin_double_double">@dimen/activity_margin_double_double
+    </dimen>
+    <dimen name="activity_vertical_margin_double_double">@dimen/activity_margin_double_double
+    </dimen>
+
+    <dimen name="activity_margin_halve">8dp</dimen>
+    <dimen name="activity_horizontal_margin_halve">@dimen/activity_margin_halve</dimen>
+    <dimen name="activity_vertical_margin_halve">@dimen/activity_margin_halve</dimen>
+
+    <dimen name="activity_margin_halve_halve">4dp</dimen>
+    <dimen name="activity_horizontal_margin_halve_halve">@dimen/activity_margin_halve_halve</dimen>
+    <dimen name="activity_vertical_margin_halve_halve">@dimen/activity_margin_halve_halve</dimen>
+    <!-- - Additional screen margins. -->
+
+    <!-- Advertisement box -->
+    <dimen name="advertisement_box_content_height">54dp</dimen>
+    <!-- - Advertisement box -->
+
+    <dimen name="app_bar_height">180dp</dimen>
+</resources>

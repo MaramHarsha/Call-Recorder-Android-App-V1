@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.IncomingTabFragment">
+
+    <ScrollView
+        android:id="@+id/fragment_incoming_tab_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_incoming_tab_parent_bottom_linear_layout"
+        android:padding="@dimen/activity_margin"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="@dimen/activity_horizontal_margin_double"
+                android:layout_height="1dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:background="#9EB4B9" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_vertical_margin_halve"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/incoming"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_call_received_24px"
+                android:contentDescription="@string/incoming"
+                android:tint="@color/colorPrimary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="@string/no_incoming_calls"
+                android:textColor="@color/colorPrimary"
+                android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+            <View
+                android:layout_width="@dimen/activity_horizontal_margin_double"
+                android:layout_height="1dip"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:background="#9EB4B9" />
+
+            <!-- Advertisement box -->
+            <LinearLayout
+                android:id="@+id/fragment_incoming_tab_advertisement_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin_halve"
+                android:background="@drawable/box_background"
+                android:padding="@dimen/activity_margin"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="start"
+                    android:text="@string/advertisement"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small" />
+
+                <View
+                    android:background="@drawable/shape_dash_line"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dip"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:layerType="software" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/advertisement_box_content_height">
+
+                    <ProgressBar
+                        style="@style/Widget.AppCompat.ProgressBar"
+                        android:id="@+id/fragment_incoming_tab_advertisement_box_progress_bar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/activity_margin" />
+
+                    <com.google.android.gms.ads.AdView
+                        xmlns:ads="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/fragment_incoming_tab_advertisement_box_ad_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignEnd="@id/fragment_incoming_tab_advertisement_box_not_available_text_view"
+                        android:layout_alignRight="@id/fragment_incoming_tab_advertisement_box_not_available_text_view"
+                        android:layout_gravity="center"
+                        android:layout_marginEnd="0dp"
+                        android:layout_marginRight="0dp"
+                        android:visibility="gone"
+                        ads:adSize="BANNER"
+                        ads:adUnitId="@string/google_admob_text_typing_fragment_banner_ad" />
+
+                    <!-- Unit ID for testing: ca-app-pub-3940256099942544/6300978111 -->
+
+                    <TextView
+                        android:id="@+id/fragment_incoming_tab_advertisement_box_not_available_text_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:gravity="start|center_vertical"
+                        android:drawableLeft="@drawable/ic_baseline_block_24px"
+                        android:drawableStart="@drawable/ic_baseline_block_24px"
+                        android:drawableTint="@color/colorPrimary"
+                        android:drawablePadding="@dimen/activity_margin_halve"
+                        android:text="@string/not_available_at_the_moment"
+                        android:textStyle="bold"
+                        android:textAlignment="textStart"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Caption"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+            <!-- - Advertisement box -->
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/fragment_incoming_tab_main_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/fragment_incoming_tab_parent_bottom_linear_layout"
+        android:orientation="vertical"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:clipToPadding="false"
+        android:scrollbarStyle="outsideOverlay"
+        android:fillViewport="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/fragment_incoming_tab_search_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/box_background"
+            app:queryHint="@string/search"
+            app:defaultQueryHint="@string/search"
+            app:iconifiedByDefault="false" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:background="#E7E7E7" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fragment_incoming_tab_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/fragment_incoming_tab_parent_bottom_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:paddingStart="@dimen/activity_horizontal_margin"
+        android:paddingEnd="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dip"
+            android:background="#E7E7E7" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/fragment_incoming_tab_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:gravity="center_vertical"
+                android:drawableStart="@drawable/ic_baseline_call_24px"
+                android:drawableLeft="@drawable/ic_baseline_call_24px"
+                android:drawableTint="@color/colorPrimary"
+                android:drawablePadding="@dimen/activity_margin_halve"
+                android:text="@string/record_incoming_calls"
+                android:textColor="@color/colorPrimary" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/fragment_incoming_tab_switch_compat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

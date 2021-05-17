@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval" >
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/ic_baseline_call_received_white_24px"
+        android:top="@dimen/activity_vertical_margin_double"
+        android:bottom="@dimen/activity_vertical_margin_double"
+        android:left="@dimen/activity_vertical_margin_double"
+        android:right="@dimen/activity_vertical_margin_double">
+    </item>
+</layer-list>
